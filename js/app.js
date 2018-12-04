@@ -19,19 +19,18 @@
 //     }
 // });
 
-fetch('https://crossorigin.me/http://rss.cnn.com/rss/edition_technology.rss').then((res) => {
-
-    alert(res);
-    res.text().then((xmlTxt) => {
-        var domParser = new DOMParser()
-        let doc = domParser.parseFromString(xmlTxt, 'text/xml')
-        doc.querySelectorAll('item').forEach((item) => {
-            let h1 = document.createElement('h1')
-            h1.textContent = item.querySelector('title').textContent
-            document.querySelector('output').appendChild(h1)
-        })
-    })
-});
+// fetch('http://www.feedrapp.info?q=https://thenextweb.com/feed/').then((res) => {
+//     alert(res);
+//     res.text().then((xmlTxt) => {
+//         var domParser = new DOMParser()
+//         let doc = domParser.parseFromString(xmlTxt, 'text/xml')
+//         doc.querySelectorAll('item').forEach((item) => {
+//             let h1 = document.createElement('h1')
+//             h1.textContent = item.querySelector('title').textContent
+//             document.querySelector('#rss-feeds').appendChild(h1)
+//         })
+//     })
+// });
 
 // $.get('https://timesofindia.indiatimes.com/rssfeeds/-2128936835.cms', function (data) {
 //     $(data).find("entry").each(function () { // or "item" or whatever suits your feed
@@ -46,3 +45,10 @@ fetch('https://crossorigin.me/http://rss.cnn.com/rss/edition_technology.rss').th
 
 
 
+jQuery(function ($) {
+    // $("#rss-feeds").rss("https://thenextweb.com/feed/")
+    $('#rss-feeds').rss("https://thenextweb.com/feed/", {
+        layoutTemplate: "<table><tr><th>Title</th></tr>{entries}</table>",
+        entryTemplate: '<tr><td><a href="{url}" target="_blank">{title}</a><br/>{shortBodyPlain}<br/><br/></td></tr>'
+    })
+});
