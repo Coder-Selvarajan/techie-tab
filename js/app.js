@@ -43,11 +43,53 @@
 //     });
 // });
 
+// // // https://blog.feedspot.com/technology_rss_feeds/
+
+// // News Aggregator:
+// https://www.tldrnewsletter.com/rss
+// https://www.techmeme.com/feed.xml
+
+
+// // News Source: Top 10 
+// https://techcrunch.com/feed/
+// https://thenextweb.com/feed/
+// https://www.wired.com/feed/rss
+// https://www.firstpost.com/rss/tech.xml
+// https://www.theverge.com/rss/frontpage
+// https://mashable.com/rss/
+// http://feeds.macrumors.com/MacRumors-All
+// https://www.smashingmagazine.com/feed
+// https://www.digitaltrends.com/cool-tech/feed/
+
+
+// https://www.techmeme.com/feed.xml
+// https://www.engadget.com/rss.xml
+// http://feeds.feedburner.com/TechCrunch
+// https://www.technologyreview.com/topnews.rss
+// http://feeds.arstechnica.com/arstechnica/technology-lab
+// https://readwrite.com/feed/?x=1
+// https://www.recode.net/rss/index.xml  
+// https://www.computerworld.com/index.rss
+// https://interestingengineering.com/feed
+// http://feeds.feedburner.com/Makeuseof
+// http://feeds.bbci.co.uk/news/technology/rss.xml
+// http://rss.nytimes.com/services/xml/rss/nyt/Technology.xml
+// https://www.cnet.com/rss/news/
+// http://feeds.washingtonpost.com/rss/business/technology
+// https://www.huffingtonpost.com/section/technology/feed
+// https://www.mirror.co.uk/tech/?service=rss
+// https://www.cnet.com/rss/all/
+// https://thenextweb.com/section/tech/feed/
+// https://www.macworld.com/index.rss
+// http://appleinsider.com/rss/news/
+// https://www.pcworld.com/index.rss
+// https://www.reddit.com/r/technology/.rss
+
 
 
 jQuery(function ($) {
     // $("#rss-feeds").rss("https://thenextweb.com/feed/")
-    $('#rss-feeds').rss("https://thenextweb.com/feed/", {
+    $('#rss-feeds').rss("https://www.techmeme.com/feed.xml", {
         layoutTemplate: "<table><tr><th>Title</th></tr>{entries}</table>",
         entryTemplate: '<tr><td><a href="{url}" target="_blank">{title}</a><br/>{shortBodyPlain}<br/><br/></td></tr>'
     })
