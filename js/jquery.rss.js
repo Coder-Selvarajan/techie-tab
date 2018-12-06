@@ -11,7 +11,7 @@
         this.options = $.extend({
             ssl: false,
             host: 'www.feedrapp.info',
-            limit: 10,
+            limit: 5,
             key: null,
             layoutTemplate: '<ul>{entries}</ul>',
             entryTemplate: '<li><a href="{url}">[{author}@{date}] {title}</a><br/>{shortBodyPlain}</li>',

@@ -50,16 +50,7 @@
 // https://www.techmeme.com/feed.xml
 
 
-// // News Source: Top 10 
-// https://techcrunch.com/feed/
-// https://thenextweb.com/feed/
-// https://www.wired.com/feed/rss
-// https://www.firstpost.com/rss/tech.xml
-// https://www.theverge.com/rss/frontpage
-// https://mashable.com/rss/
-// http://feeds.macrumors.com/MacRumors-All
-// https://www.smashingmagazine.com/feed
-// https://www.digitaltrends.com/cool-tech/feed/
+
 
 
 // https://www.techmeme.com/feed.xml
@@ -85,12 +76,69 @@
 // https://www.pcworld.com/index.rss
 // https://www.reddit.com/r/technology/.rss
 
-
+// // News Source: Top 10 
+// https://techcrunch.com/feed/
+// https://thenextweb.com/feed/
+// https://www.wired.com/feed/rss
+// https://www.firstpost.com/rss/tech.xml
+// https://www.theverge.com/rss/frontpage
+// https://mashable.com/rss/
+// http://feeds.macrumors.com/MacRumors-All
+// https://www.smashingmagazine.com/feed
+// https://www.digitaltrends.com/cool-tech/feed/
+var $feed;
 
 jQuery(function ($) {
+
+
     // $("#rss-feeds").rss("https://thenextweb.com/feed/")
-    $('#rss-feeds').rss("https://www.techmeme.com/feed.xml", {
+    $('#rss-feeds').rss("https://techcrunch.com/feed/", {
         layoutTemplate: "<table><tr><th>Title</th></tr>{entries}</table>",
-        entryTemplate: '<tr><td><a href="{url}" target="_blank">{title}</a><br/>{shortBodyPlain}<br/><br/></td></tr>'
-    })
+        entryTemplate: '<tr><td>TC: <a href="{url}" target="_blank">{title}</a><br/>{shortBodyPlain}<br/><br/></td></tr>'
+    });
+
+    $('#rss-feeds').rss("https://thenextweb.com/feed/", {
+        layoutTemplate: "<table><tr><th>Title</th></tr>{entries}</table>",
+        entryTemplate: '<tr><td>TNW: <a href="{url}" target="_blank">{title}</a><br/>{shortBodyPlain}<br/><br/></td></tr>'
+    });
+
+    $('#rss-feeds').rss("https://www.wired.com/feed/rss", {
+        layoutTemplate: "<table><tr><th>Title</th></tr>{entries}</table>",
+        entryTemplate: '<tr><td>Wired: <a href="{url}" target="_blank">{title}</a><br/>{shortBodyPlain}<br/><br/></td></tr>'
+    });
+
+    $('#rss-feeds').rss("https://www.firstpost.com/rss/tech.xml", {
+        layoutTemplate: "<table><tr><th>Title</th></tr>{entries}</table>",
+        entryTemplate: '<tr><td>Tech2: <a href="{url}" target="_blank">{title}</a><br/>{shortBodyPlain}<br/><br/></td></tr>'
+    });
+
+    $('#rss-feeds').rss("https://www.theverge.com/rss/frontpage", {
+        layoutTemplate: "<table><tr><th>Title</th></tr>{entries}</table>",
+        entryTemplate: '<tr><td>Verge: <a href="{url}" target="_blank">{title}</a><br/>{shortBodyPlain}<br/><br/></td></tr>'
+    });
+
+    $('#rss-feeds').rss("https://mashable.com/rss/", {
+        layoutTemplate: "<table><tr><th>Title</th></tr>{entries}</table>",
+        entryTemplate: '<tr><td>Mashable: <a href="{url}" target="_blank">{title}</a><br/>{shortBodyPlain}<br/><br/></td></tr>'
+    });
+
+    $('#rss-feeds').rss("http://feeds.macrumors.com/MacRumors-All", {
+        layoutTemplate: "<table><tr><th>Title</th></tr>{entries}</table>",
+        entryTemplate: '<tr><td>MacR: <a href="{url}" target="_blank">{title}</a><br/>{shortBodyPlain}<br/><br/></td></tr>'
+    });
+
+    $('#rss-feeds').rss("https://www.smashingmagazine.com/feed", {
+        layoutTemplate: "<table><tr><th>Title</th></tr>{entries}</table>",
+        entryTemplate: '<tr><td>SamzM: <a href="{url}" target="_blank">{title}</a><br/>{shortBodyPlain}<br/><br/></td></tr>'
+    });
+
+    $('feed').rss("https://www.digitaltrends.com/cool-tech/feed/", {
+        layoutTemplate: "<table><tr><th>Title</th></tr>{entries}</table>",
+        entryTemplate: '<tr><td>DigtT: <a href="{url}" target="_blank">{title}</a><br/>{shortBodyPlain}<br/><br/></td></tr>'
+    });
+
 });
+
+function displayfeed() {
+    alert($feed);
+}
