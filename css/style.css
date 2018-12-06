@@ -6,11 +6,13 @@ body{
     background: whitesmoke;
 }
 
-#rss-feeds img {
-    width: 100px;
-    height: 100px; 
-    /* max-height: 100px; */
-    float: left;
+.img {
     margin-right: 20px;
-
+    position: relative;
+    float: left;
+    width:  100px;
+    height: 100px;
+    background-position: 50% 50%;
+    background-repeat:   no-repeat;
+    background-size:     cover;
 }

@@ -91,21 +91,22 @@ var feedval = '';
 jQuery(function ($) {
 
     // $("#rss-feeds").rss("https://thenextweb.com/feed/")
-    $('#rss-feeds').rss("https://techcrunch.com/feed/", {
-        layoutTemplate: "<table><tr><th>Title</th></tr>{entries}</table>",
-        entryTemplate: `<tr><td>
-                        {teaserImage} TC: 
-                        <a href="{url}" target="_blank">{title}</a> <br/>
-                        {shortBodyPlain} <br/>
-                        {author} - {date} <br/><br/>
-                        <hr/>
-                        </td></tr>`
-    });
+    // $('#rss-feeds').rss("https://techcrunch.com/feed/", {
+    //     layoutTemplate: "<table><tr><th>Title</th></tr>{entries}</table>",
+    //     entryTemplate: `<tr><td>
+    //                     {teaserImage} TC: 
+    //                     <a href="{url}" target="_blank">{title}</a> <br/>
+    //                     {shortBodyPlain} <br/>
+    //                     {author} - {date} <br/><br/>
+    //                     <hr/>
+    //                     </td></tr>`
+    // });
 
     $('#rss-feeds').rss("https://thenextweb.com/feed/", {
         layoutTemplate: "<table><tr><th>Title</th></tr>{entries}</table>",
         entryTemplate: `<tr><td>
-                        {teaserImage} TNW: <br/>
+                        <div class="img" style="background-image:url({teaserImageUrl});"></div>
+                        TNW: <br/>
                         <a href="{url}" target="_blank">{title}</a> <br/>
                         {shortBodyPlain} <br/>
                         {author} - {date} <br/><br/>
@@ -113,32 +114,33 @@ jQuery(function ($) {
                         </td></tr>`
     });
 
-    $('#rss-feeds').rss("https://www.wired.com/feed/rss", {
-        layoutTemplate: "<table><tr><th>Title</th></tr>{entries}</table>",
-        entryTemplate: `<tr><td>
-                        {teaserImage} WIRED: <br/>
-                        <a href="{url}" target="_blank">{title}</a> <br/>
-                        {shortBodyPlain} <br/>
-                        {author} - {date} <br/><br/>
-                        <hr/>
-                        </td></tr>`
-    });
+    // $('#rss-feeds').rss("https://www.wired.com/feed/rss", {
+    //     layoutTemplate: "<table><tr><th>Title</th></tr>{entries}</table>",
+    //     entryTemplate: `<tr><td>
+    //                     {teaserImage} WIRED: <br/>
+    //                     <a href="{url}" target="_blank">{title}</a> <br/>
+    //                     {shortBodyPlain} <br/>
+    //                     {author} - {date} <br/><br/>
+    //                     <hr/>
+    //                     </td></tr>`
+    // });
 
-    $('#rss-feeds').rss("https://www.firstpost.com/rss/tech.xml", {
-        layoutTemplate: "<table><tr><th>Title</th></tr>{entries}</table>",
-        entryTemplate: `<tr><td>
-                        {teaserImage} TECH2: <br/>
-                        <a href="{url}" target="_blank">{title}</a> <br/>
-                        {shortBodyPlain} <br/>
-                        {author} - {date} <br/><br/>
-                        <hr/>
-                        </td></tr>`
-    });
+    // $('#rss-feeds').rss("https://www.firstpost.com/rss/tech.xml", {
+    //     layoutTemplate: "<table><tr><th>Title</th></tr>{entries}</table>",
+    //     entryTemplate: `<tr><td>
+    //                     {teaserImage} TECH2: <br/>
+    //                     <a href="{url}" target="_blank">{title}</a> <br/>
+    //                     {shortBodyPlain} <br/>
+    //                     {author} - {date} <br/><br/>
+    //                     <hr/>
+    //                     </td></tr>`
+    // });
 
     $('#rss-feeds').rss("https://www.theverge.com/rss/frontpage", {
         layoutTemplate: "<table><tr><th>Title</th></tr>{entries}</table>",
         entryTemplate: `<tr><td>
-                        {teaserImage} Verge: <br/>
+                        <div class="img" style="background-image:url({teaserImageUrl});"></div>
+                        Verge: <br/>
                         <a href="{url}" target="_blank">{title}</a> <br/>
                         {shortBodyPlain} <br/>
                         {author} - {date} <br/><br/>
@@ -149,7 +151,8 @@ jQuery(function ($) {
     $('#rss-feeds').rss("https://mashable.com/rss/", {
         layoutTemplate: "<table><tr><th>Title</th></tr>{entries}</table>",
         entryTemplate: `<tr><td>
-                        {teaserImage} Mashable: <br/>
+                        <div class="img" style="background-image:url({teaserImageUrl});"></div>
+                        Mashable: <br/>
                         <a href="{url}" target="_blank">{title}</a> <br/>
                         {shortBodyPlain} <br/>
                         {author} - {date} <br/><br/>
@@ -160,7 +163,8 @@ jQuery(function ($) {
     $('#rss-feeds').rss("http://feeds.macrumors.com/MacRumors-All", {
         layoutTemplate: "<table><tr><th>Title</th></tr>{entries}</table>",
         entryTemplate: `<tr><td>
-                        {teaserImage} MacRumors: <br/>
+                        <div class="img" style="background-image:url({teaserImageUrl});"></div>
+                        MacRumors: <br/>
                         <a href="{url}" target="_blank">{title}</a> <br/>
                         {shortBodyPlain} <br/>
                         {author} - {date} <br/><br/>
@@ -171,7 +175,8 @@ jQuery(function ($) {
     $('#rss-feeds').rss("https://www.smashingmagazine.com/feed", {
         layoutTemplate: "<table><tr><th>Title</th></tr>{entries}</table>",
         entryTemplate: `<tr><td>
-                        {teaserImage} Smazing Mag: <br/>
+                        <div class="img" style="background-image:url({teaserImageUrl});"></div>                
+                        Smazing Mag: <br/>
                         <a href="{url}" target="_blank">{title}</a> <br/>
                         {shortBodyPlain} <br/>
                         {author} - {date} <br/><br/>
@@ -179,17 +184,17 @@ jQuery(function ($) {
                         </td></tr>`
     });
 
-    $('#rss-feeds').rss("https://www.digitaltrends.com/cool-tech/feed/", {
-        layoutTemplate: "<table><tr><th>Title</th></tr>{entries}</table>",
-        entryTemplate: `<tr><td>
-                        {teaserImage} Digital Trends: <br/>
-                        <a href="{url}" target="_blank">{title}</a> <br/>
-                        {shortBodyPlain} <br/>
-                        {author} - {date} <br/><br/>
-                        <hr/>
-                        </td></tr>`,
-        
-    });
+    // $('#rss-feeds').rss("https://www.digitaltrends.com/cool-tech/feed/", {
+    //     layoutTemplate: "<table><tr><th>Title</th></tr>{entries}</table>",
+    //     entryTemplate: `<tr><td>
+    //                     {teaserImage} Digital Trends: <br/>
+    //                     <a href="{url}" target="_blank">{title}</a> <br/>
+    //                     {shortBodyPlain} <br/>
+    //                     {author} - {date} <br/><br/>
+    //                     <hr/>
+    //                     </td></tr>`,
+
+    // });
 
 });
 
