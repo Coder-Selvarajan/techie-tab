@@ -5,3 +5,12 @@ h2 {
 body{
     background: whitesmoke;
 }
+
+#rss-feeds img {
+    width: 100px;
+    height: 100px; 
+    /* max-height: 100px; */
+    float: left;
+    margin-right: 20px;
+
+}
